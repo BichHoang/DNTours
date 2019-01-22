@@ -1,0 +1,37 @@
+<div class="blog scroll-to-block">
+    <div class="container from-blog">
+        <div class="region region-onepage-blog">
+    <div id="block-views-17ce894fd21e8520e3982e4b62550a8e" class="block block-views">
+
+    
+  <div class="content">
+                <h2 class="block-title b-block-title">From the blog</h2>
+<p class="sub-title">
+  Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum. Cras a purus quis sem tincidunt egestas vel id lacus.
+</p>  
+  
+  
+      <div class="row">
+      <% @news.each do |news| %>
+        <div class="col-md-4 col-sm-4 post">
+      
+          <a href=<%= news.url%> >
+          <%= image_tag(news.image, typeof: "foaf:Image", :alt => "img", size: "370x277", target: "_blank") %>
+          </a>
+<h5><a href=<%= news.url%> ><%= news.new_name%></a></h5>
+<p>admin | 09 March 2015</p>
+<a class="read-more red-blog" href=<%= news.url%> >Read more
+</a>    </div>
+ 
+    <% end %>
+    </div>
+
+  
+  
+  
+  
+    </div>
+</div>
+  </div>
+    </div>
+  </div>

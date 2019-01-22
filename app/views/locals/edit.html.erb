@@ -1,0 +1,22 @@
+<%= render 'inc/header' %>
+<div class="container_a_12">
+<!-- Account overview -->
+ <div class="grid_main_r">
+               <div class="module123">
+
+<% provide(:button_text, 'Save changes') %>
+<h1>Edit Local</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<%= render 'form', local: @local %>
+<%= link_to 'Back', locals_path %>
+ </div>
+</div>
+ </div>  <!-- End .module -->
+                <div style="clear:both;"></div>
+                <div class="padding-bottom"></div>
+            </div> <!-- End .grid_5 -->
+            
+            <div style="clear:both;"></div>
+
+<%= render 'inc/footer'%>

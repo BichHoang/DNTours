@@ -1,0 +1,128 @@
+<%= render "inc/header" %>
+        
+    <div class="container_a_12">
+             
+
+              <div class="bottom-spacing">
+                  <!-- Button--> 
+                  
+                 
+                   <%= search_form_for  @search, class: "col-md-12" do |f| %>
+  <div class="form-group col-md-2">
+    <%= f.text_field :customer_cont,  placeholder: "enter name",  class: "form-control" %>
+  </div>
+  <div class="form-group col-md-2">
+      <%= f.submit "search", class: "btn btn-primary" %>
+  <ont
+<% end %>
+
+                  </div>
+                
+                  <div class="clear"></div>
+            </div>
+
+
+            <div class="grid_a_12">
+                <!-- Example table -->
+                <div class="module123">
+                  <h2 style="text-align: center;"><span>List Bookings</span></h2>
+                    <p id="notice"><%= notice %>
+                    <div>
+                      <form action="">
+                        <table>
+                          <thead>
+                                <tr>
+                                    <th style="width:4%; text-align: center;">ID</th>
+                                    <th >Tour</th>
+                                    <th >Customer</th>
+                                    <th >Phone</th>
+                                    <th >Email</th>
+                                    <th >Adress</th>
+                                    <th style="width:15%; text-align: center;">Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <% @bookings.each do |booking| %>
+                                <tr>
+                                    <td class="align-center"><%= booking.id %></td>
+                                    <td><%= booking.tour.tour_name %></td>
+                                    <td><%= booking.customer %></td>
+                                    <td><%= booking.phone %></td>
+                                    <td><%= booking.email %></td>
+                                    <td><%= booking.adress %></td>
+                                    <td align="center">
+                                        <a href=""><%= link_to 'Edit', edit_booking_path(booking) %><img src="/assets/images/pencil.gif" alt="edit" /></a>
+                                        
+                                      <a href=""><%= link_to "Delete", booking, method: :delete, data: {confirm:"Bạn có chắc chắn xóa?"} %>
+                                        
+                                         <img src="/assets/images/bin.gif" width="16" height="16" alt="delete" /></a>   
+                                        
+                                    </td>
+                                </tr>
+                               <% end %>
+                            </tbody>
+                        </table>
+                        </form>
+                     </div> <!-- End .module123-table-body -->
+                </div> <!-- End .module123 -->
+               <div class="pagination123">           
+                        <div class="numbers123">
+                               <%= paginate @bookings %>
+                        </div> 
+                        <div style="clear: both;"></div> 
+                     </div>
+               </div> <!-- End .grid_12 -->
+          
+
+
+            <div style="clear:both;"></div>
+           
+<%= render 'inc/footer'%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<p id="notice"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tour</th>
+      <th>Customer</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Adress</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.tour_id %></td>
+        <td><%= booking.customer %></td>
+        <td><%= booking.phone %></td>
+        <td><%= booking.email %></td>
+        <td><%= booking.adress %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>

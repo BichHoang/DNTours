@@ -1,0 +1,76 @@
+<div class="region region-onepage-hot-tours">
+    <div id="block-views-f2d0f7214c4cb77c5f4add6920fad010" class="block block-views">
+
+    
+  <div class="content">
+    <section class="hot-tour scroll-to-block">
+<div class="container">
+            <div class="t-title-block">
+       <%= image_tag("ico1.png", :alt => "img") %>     
+      
+      <h2 class="block-title t-about-title">hot tours</h2>
+<p class="sub-title t-sub-title">
+  Nội dung hot tours
+</p>    </div>
+  
+
+        
+         
+        <div class="swiper-container" data-mode="horizontal"  data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3" data-lg-slides="4" data-loop="0"> 
+        
+
+      
+      <div class="swiper-wrapper ">
+      <% @tours.each do |tour| %>
+          <div class="swiper-slide">
+
+            
+
+          <div class="hot-container">
+  <%= image_tag(tour.image , typeof: "foaf:Image" , :alt => "img", size: "271x300") %>   
+  
+    <div class="hot-place-box">
+    <div class="hot-price">$<%= tour.price %></div>
+    <h3><%= tour.tour_name %></h3>
+    <div class="field-features-sw-place-det">
+      <div class="item-list"><ul><li class="first">Hotel: <span>5 stars</span></li>
+<li>Duration: <span><%= tour.day_number %></span></li>
+<li class="last">Persons: <span>2</span></li>
+</ul></div>
+    </div>
+  </div>
+  <div class="place-more">
+    <a href=<%= tour_path(tour) %> target="_blank">Read more</a>
+    <a href=<%= tour_path(tour) %> target="_blank" class="read-more"> <i class="w-arrow"></i></a>
+  </div>
+
+
+</div>    
+      
+</div>
+    <% end %>
+  
+
+    
+
+      </div>
+
+      
+
+      <div class="pagination pagination-hide"></div>
+    </div>
+    <div class="arrows hot-arrows">
+      <div class="arrow-left"><%= image_tag("h-l-arrow.png", :alt => "arrow") %>
+      </div>
+      <div class="arrow-right"><%= image_tag("trh-arrow.png", :alt => "arrow") %>     	
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  </div>
+</section>  </div>
+</div>
+  </div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tour:</strong>
+  <%= @booking.tour_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @booking.customer %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @booking.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @booking.email %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @booking.adress %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', "http://localhost:3000" %>

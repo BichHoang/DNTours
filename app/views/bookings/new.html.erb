@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Da Nang Tours</title>
+    <meta name="description" content="Các Tours Du Lịch Ở Đà Nẵng">
+    <meta name="keywords" content="Các Địa Điểm Du Lịch Ở Đà Nẵng">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!-- Header -->
+        <div id="header">
+            <!-- Header. Status part -->
+            <div id="header-status">
+                <div class="container_a_12">
+                </div>
+                <div style="clear:both;"></div>
+            </div> <!-- End #header-status -->
+            
+            <!-- Header. Main part -->
+            <div id="header-main">
+                <div class="container_a_12">
+                    <div class="grid_a_12">
+                        <div id="logo">
+                           
+                        </div><!-- End. #Logo -->
+                    </div><!-- End. .grid_a_12-->
+                    <div style="clear: both;"></div>
+                </div><!-- End. .container_a_12 -->
+            </div> <!-- End #header-main -->
+            <div style="clear: both;"></div>
+            <!-- Sub navigation -->
+            <div id="subnav">
+                <div class="container_a_12">
+                    
+                </div><!-- End. .container_a_12 -->
+                <div style="clear: both;"></div>
+            </div> <!-- End #subnav -->
+        </div> <!-- End #header -->
+
+<div class="container_a_12">
+<!-- Account overview -->
+ <div class="grid_main_r">
+               <div class="module123">
+     <h2><span>Thêm Booking</span></h2>
+
+<%= render 'form', booking: @booking %>
+
+<%= link_to 'Back', "http://localhost:3000" %>
+
+<div style="clear:both;"></div>
+                <div class="padding-bottom"></div>
+            </div> <!-- End .grid_5 -->
+            
+            <div style="clear:both;"></div>
+            
+<%= render 'inc/footer'%>

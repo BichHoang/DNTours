@@ -1,0 +1,86 @@
+<%= render "inc/header" %>
+        
+    <div class="container_a_12">
+             
+
+              <div class="bottom-spacing">
+                  <!-- Button--> 
+                   
+                  <div class="float-left">
+                      <a href="<%= new_tour_path %>" class="button">
+                        <span> Thêm Tours <img src="/assets/images/plus-small.gif" alt="Thêm tin mới"></span>
+                      </a>
+                  </div>
+            
+                  <div class="clear"></div>
+            </div>
+
+
+            <div class="grid_a_12">
+                <!-- Example table -->
+                <div class="module123">
+                  <h2 style="text-align: center;"><span>List Tours</span></h2>
+                    <p id="notice"><%= notice %>
+                    <div>
+                      <form action="">
+                        <table>
+                          <thead>
+                                <tr>
+                                    <th style="width:4%; text-align: center;">ID</th>
+                                    <th style="width:4%; text-align: center;">Tour name</th>
+                                    <th style="width:4%; text-align: center;">Place</th>
+                                    <th style="width:4%; text-align: center;">Local</th>
+                                    <th style="width:4%; text-align: center;">Price</th>
+                                    <th style="width:4%; text-align: center;">Day number</th>
+                                    <th style="width:46%; text-align: center;">Detail</th>
+                                    <th style="width:10%; text-align: center;">Image</th>
+                                    <th style="width:25%; text-align: center;">Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             <% @tours.each do |tour| %>
+                                <tr>
+                                    <td class="align-center"><%= tour.id %></td>
+                                    <td><%= tour.tour_name %></td>
+                                    <td><%= tour.place %></td>
+                                    <td><%= tour.local.local_name %></td>
+                                    <td><%= tour.price %></td>
+                                    <td><%= tour.day_number %></td>
+                                    <td><%= tour.detail %></td>
+                                    <% if tour.image? %>
+    
+                                    <td><%= image_tag tour.image.thumb.url %></td>
+                                    <%else %>
+                                        <td><%= tour.image %></td>
+                                     <% end %>
+                                    <td align="center">
+                                        <a href=""><%= link_to 'Edit', edit_tour_path(tour) %><img src="/assets/images/pencil.gif" alt="edit" /></a>
+                                        
+                                        <a href=""><%= link_to "Delete", tour_path(tour), method: :delete, data: {confirm:"Bạn có chắc chắn xóa?"} %>
+                                      
+                                        
+                                         <img src="/assets/images/bin.gif" width="16" height="16" alt="delete" /></a>        
+                                        
+                                    
+                                   
+                                    </td>
+                                </tr>
+                               <% end %>
+                            </tbody>
+                        </table>
+                        </form>
+                     </div> <!-- End .module123-table-body -->
+                </div> <!-- End .module123 -->
+               <div class="pagination123">           
+                        <div class="numbers123">
+                               <%= paginate @tours %>
+                        </div> 
+                        <div style="clear: both;"></div> 
+                     </div>
+               </div> <!-- End .grid_12 -->
+          
+
+
+            <div style="clear:both;"></div>
+           
+<%= render 'inc/footer'%>

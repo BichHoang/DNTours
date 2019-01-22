@@ -1,0 +1,60 @@
+<div class="region region-onepage-our-gallery">
+    <div id="block-views-0da21991801cce90f89c208d8fb76f5f" class="block block-views">
+
+    
+  <div class="content">
+    <section class="t-gallery scroll-to-block">
+        
+        <div class="container">
+
+      <div class="t-title-block">
+      <%= image_tag("trico4.png", :alt => "img") %>
+      <h2 class="block-title t-about-title">our gallery</h2>        
+  
+  
+      <div id="filters" class="cont-filter clearfix">
+      <span class="button actual" data-filter="*">all</span>
+            <% @locals.each do |local| %>
+          <span class="button" data-filter=".<%= local.id %>" >
+          <%= local.local_name%>
+            
+          </span>        
+          
+
+              <% end %>
+                </div>
+  
+  
+  
+  
+  
+      </div>
+  
+  
+  </div><!-- /.container -->
+
+        
+
+      <div id="gallery-popap" class="isotope">
+      <div class="grid"></div>
+            <% @tours.each do |tour| %>
+          <a class="country-link <%=tour.local_id %> work-img" href="#gallery-box">
+  <%= image_tag(tour.image, typeof: "foaf:Image" , :alt => "img", size: "350") %>                
+  
+  <div class="info-panel">
+    <div class="hot-price">$<%= tour.price %></div>
+    <h3 class="country-name"><%= tour.tour_name %></h3>
+  </div>
+</a>        
+          
+      <% end %> 
+</div>
+  
+  
+               
+
+  
+  
+</section>  </div>
+</div>
+  </div>

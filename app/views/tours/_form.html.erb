@@ -1,0 +1,105 @@
+<%= form_with(model: tour, local: true) do |form| %>
+  <% if tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tour_name %>
+    <%= form.text_field :tour_name, id: :tour_tour_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place %>
+    <%= form.text_field :place, id: :tour_place %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :local_id %>
+    <select id="local" onchange="localChanged(this)">
+      <% if tour.local_id? %>
+        <option value=<%= tour.local_id %> ><%= tour.local.local_name %></option>
+         <% @locals.each do |local| %>
+         <% if local.id != tour.local_id %>
+        <option value=<%= local.id %> ><%= local.local_name %></option>
+        <%end%>
+      <%end%>
+      
+
+      <% else %>
+        <option value="" >--Chon Local--</option>
+      <% @locals.each do |local| %>
+      <option value=<%= local.id %> ><%= local.local_name %></option>
+      <%end%>
+      <%end%>
+    </select>
+    <%= form.hidden_field :local_id, id: :tour_local_id %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :tour_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day_number %>
+    <%= form.text_field :day_number, id: :tour_day_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail, id: :tour_detail %>
+  </div>
+
+ <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %><br>
+  </div>
+
+  <% if tour.image? %>
+    <%= image_tag tour.image.thumb.url %>
+    <div>
+      <%= label_tag :remove_image do %>
+        Remove image
+        <%= form.check_box :remove_image %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+</br></br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+ <script language="javascript">
+            // Hàm xử lý khi thẻ select thay đổi giá trị được chọn
+            // obj là tham số truyền vào và cũng chính là thẻ select
+            function localChanged(obj)
+            {
+                  var id = document.getElementById('tour_local_id');
+                  var val = obj.value;
+                  id.value = val;
+            }
+ 
+        </script>
+ 
+        </script>

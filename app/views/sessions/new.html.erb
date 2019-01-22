@@ -1,0 +1,115 @@
+<!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Da Nang Tours</title>
+    <meta name="description" content="Các Tours Du Lịch Ở Đà Nẵng">
+    <meta name="keywords" content="Các Địa Điểm Du Lịch Ở Đà Nẵng">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!-- Header -->
+        <div id="header">
+            <!-- Header. Status part -->
+            <div id="header-status">
+                <div class="container_a_12">
+                    <div class="grid123_4">
+                      <ul class="user-pro">
+              <li><%= link_to "Login", login_path%></li>
+              <li>Chào, <a href="">Guest</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div> <!-- End #header-status -->
+            
+            <!-- Header. Main part -->
+            <div id="header-main">
+                <div class="container_a_12">
+                    <div class="grid123_12">
+                    </div><!-- End. .grid_12-->
+                    <div style="clear: both;"></div>
+                </div><!-- End. .container_12 -->
+            </div> <!-- End #header-main -->
+            <div style="clear: both;"></div>
+            <!-- Sub navigation -->
+            
+        </div> <!-- End #header -->
+        
+    <div class="container_a_12">
+            
+           
+            <!-- Account overview -->
+            <div class="grid_main_r">
+               <div class="module123">
+     <h2><span>Đăng nhập vào hệ thống</span></h2>
+      
+     <div class="module123-body">
+
+       <%= form_for :session, url: login_path do |f| %>
+
+        <div class="form-group">
+
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: "Enter your password",
+            class: "form-control" %>
+        </div>
+      </br>
+        <div class="text-center">
+          <%= f.submit "Login", class: "btn btn-info col-lg-12" %>
+        </div>
+      <% end %>
+     </div> <!-- End .module-body -->
+
+  </div>  <!-- End .module -->
+                <div style="clear:both;"></div>
+                <div class="padding-bottom"></div>
+            </div> <!-- End .grid_5 -->
+            
+            <div style="clear:both;"></div>
+            
+        <!-- Footer -->
+        <div id="footer">
+          <div class="container_a_12">
+              <div class="grid123_12">
+                  <p>Hãy đến với chúng tôi! DANANGTOURS</p>
+            </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div> <!-- End #footer -->
+  </body>
+</html>
+
+
+
+
+<!--<div class="container">
+  <div class="row">
+    <h1 class="title">Login</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+      <%= form_for :session, url: login_path do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: "Enter your password",
+            class: "form-control" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Login", class: "btn btn-info col-lg-12" %>
+        </div>
+        <div class="text-right">
+          <%= link_to "Register", new_user_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>-->

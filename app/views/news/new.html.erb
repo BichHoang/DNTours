@@ -1,0 +1,20 @@
+<%= render 'inc/header' %>
+<div class="container_a_12">
+<!-- Account overview -->
+ <div class="grid_main_r">
+               <div class="module123">
+     <h2><span>Thêm New</span></h2>
+
+<br><br>
+
+<%= render 'form', news: @news %>
+
+<%= link_to 'Back', news_index_path %>
+<div style="clear:both;"></div>
+                <div class="padding-bottom"></div>
+            </div> <!-- End .grid_5 -->
+            
+            <div style="clear:both;"></div>
+
+<%= render 'inc/footer'%>
+

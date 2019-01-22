@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Da Nang Tours</title>
+    <meta name="description" content="Các Tours Du Lịch Ở Đà Nẵng">
+    <meta name="keywords" content="Các Địa Điểm Du Lịch Ở Đà Nẵng">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!-- Header -->
+        <div id="header">
+            <!-- Header. Status part -->
+            <div id="header-status">
+                <div class="container_a_12">
+                    <div class="grid_4">
+                      <ul class="user-pro">
+            <li><%= link_to "Logout", logout_path, method: :delete %></li>
+            <li><%= link_to "Chào "  + current_user.name, user_path(current_user.id) %></li>
+                      </ul>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div> <!-- End #header-status -->
+            
+            <!-- Header. Main part -->
+            <div id="header-main">
+                <div class="container_a_12">
+                    <div class="grid_a_12">
+                        <div id="logo">
+                            <nav class="subnav">
+                            <ul id="nav">   
+                                
+                                <li><a href="<%= user_path(current_user) %>">Quản trị</a></li>
+                                <li><a href="<%=users_path %>">Tài khoản</a></li>
+
+                            </ul>
+                            </nav>
+                        </div><!-- End. #Logo -->
+                    </div><!-- End. .grid_a_12-->
+                    <div style="clear: both;"></div>
+                </div><!-- End. .container_a_12 -->
+            </div> <!-- End #header-main -->
+            <div style="clear: both;"></div>
+            <!-- Sub navigation -->
+            <div id="subnav">
+                <div class="container_a_12">
+                    <div class="grid_a_12">
+                        <ul id="active_menu">
+
+                            <li><a href="<%= tours_path %>">Tours</a></li>
+                            <li><a href="<%= bookings_path %>">Booking</a></li>
+                            <li><a href="<%= locals_path %>">Local</a></li>
+                            <li><a href="<%= news_index_path %>">News</a></li>
+                
+                        </ul>                        
+                    </div><!-- End. .grid_a_12-->
+                </div><!-- End. .container_a_12 -->
+                <div style="clear: both;"></div>
+            </div> <!-- End #subnav -->
+        </div> <!-- End #header -->
+    
+            
+           
+            
+           
